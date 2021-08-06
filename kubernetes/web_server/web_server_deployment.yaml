@@ -24,8 +24,9 @@ spec:
         - name: MYSQL_PASSWORD
           valueFrom:
               secretKeyRef:
-              #key-value pairs of the secrets
+                name: mysql-secret
+                key: mysql-admin-password
         envFrom:
           - configMapRef:
-            #name of the configmap  
+              name: servers-configmap 
 
