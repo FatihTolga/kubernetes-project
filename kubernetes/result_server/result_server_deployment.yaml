@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deployment
+  labels:
+    name: result-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result-app-pod
+  template:
+    metadata:
+      name: result-app-pod
+      labels:
+        app: result-app-pod
+    spec:
+      containers:
+      - name: result-app
+        image: serkangumus06/phonebook-main
+        ports:
+        - containerPort: 80
+        env:
+        - name: MYSQL_PASSWORD
+          valueFrom:
+              secretKeyRef:
+              #key-value pairs of the secrets
+        envFrom:
+          - configMapRef:
+            #name of the configmap  

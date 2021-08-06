@@ -1,0 +1,14 @@
+1- add/delete/update deployment: done 
+2- mysql deployment: done 
+3- search deployment: done
+
+4- service for mysql :done
+5- service for add/delete/update :done
+6- service for search :done
+
+7- PV :done
+8- PVC :done
+
+To do:
+9- secrets 
+10- configmaps
